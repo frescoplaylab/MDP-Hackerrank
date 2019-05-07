@@ -12,9 +12,5 @@ echo "yes" | /opt/mdp/hadoop-2.7.6/bin/hdfs namenode -format
 echo "yes\n" | /opt/mdp/hadoop-2.7.6/sbin/start-dfs.sh
 echo "yes\n" | /opt/mdp/hadoop-2.7.6/sbin/start-yarn.sh
 
-/opt/mdp/hadoop-2.7.6/bin/hdfs dfs -mkdir -p /user/hive/warehouse
-/opt/mdp/hadoop-2.7.6/bin/hdfs dfs -mkdir /tmp
-/opt/mdp/hadoop-2.7.6/bin/hdfs dfs -chmod g+w /user/hive/warehouse
-/opt/mdp/hadoop-2.7.6/bin/hdfs dfs -chmod g+w /tmp
 
 service cassandra start
