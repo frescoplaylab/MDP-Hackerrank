@@ -3,7 +3,7 @@ RUN mkdir /opt/mdp && apt-get update  && apt-get install -y sudo
 RUN groupadd -r user && useradd --no-log-init -r -g user user
 RUN echo "user ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 USER user
-RUN sudo apt-get install -y --no-install-recommends openjdk-8-jdk openssh-server \  
+RUN sudo apt-get install -y --no-install-recommends openjdk-8-jdk openssh-server curl\  
    && sudo curl -s "https://archive.apache.org/dist/hadoop/core/hadoop-2.7.6/hadoop-2.7.6.tar.gz"   | sudo tar xzvf -  -C /opt/mdp \
     && sudo curl -s "http://archive.apache.org/dist/hive/hive-2.1.0/apache-hive-2.1.0-bin.tar.gz" | sudo tar xzvf -  -C /opt/mdp \
     && sudo echo "deb http://www.apache.org/dist/cassandra/debian 311x main" | sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list \
